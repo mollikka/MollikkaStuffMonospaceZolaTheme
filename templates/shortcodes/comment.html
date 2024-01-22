@@ -1,5 +1,5 @@
 <aside class="comment">
-    <img class="comment-avatar" src="/me/2022-id.jpg">
+  <img class="comment-avatar" src="{{ config.extra.author_portrait }}">
     <div class="comment-text"><div class="date">{{ date }}</div>
         {{ body | markdown | safe }}
     </div>
