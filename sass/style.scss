@@ -90,7 +90,9 @@ body {
   white-space: nowrap;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: white !important;
 }
 
@@ -134,13 +136,11 @@ figure {
 
   img {
     display: inline-block;
-    max-width: 100%; 
-
+    max-width: 100%;
   }
   .small-image {
     max-height: 50vh;
   }
-
 
   figcaption {
     font-style: italic;
@@ -155,7 +155,7 @@ figure {
 }
 
 .emoji {
-  display:inline-block;
+  display: inline-block;
   width: 2ch;
 }
 
@@ -223,7 +223,7 @@ pre {
 
 .cv-portrait {
   width: 12ch;
-  float:right;
+  float: right;
   padding: 0em 1ch 0em 1ch;
 }
 
