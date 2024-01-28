@@ -1,17 +1,8 @@
 Static generated website
 
-Development dependencies:
+Main purpose of this theme is to serve my personal [zola](https://www.getzola.org/) sites.
 
-- [zola](https://www.getzola.org/)
+For now at least choices are opinionated and specific to my use case, and
+there is no documentation. MIT license in case you find something useful here.
 
-Develop:
 
-```sh
-zola serve
-```
-
-Build:
-
-```sh
-zola build
-```
