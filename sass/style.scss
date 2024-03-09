@@ -62,7 +62,7 @@ body {
   font-size: 1.6rem;
   overflow-wrap: break-word;
 
-  max-width: 64ch;
+  max-width: 80ch;
   min-height: 100%;
   margin: auto;
 }
@@ -73,7 +73,7 @@ body {
   }
 }
 
-@media screen and (min-width: 77em) {
+@media screen and (min-width: 87em) {
   .table-of-contents {
     display: block;
     position: fixed;
@@ -212,7 +212,7 @@ pre {
   @media screen and (min-width: 49em) {
     margin: 1.4em 0 1.4em 1ch;
     li {
-      width: 31ch;
+      width: 39ch;
     }
   }
 }
