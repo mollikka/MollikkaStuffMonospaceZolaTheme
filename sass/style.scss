@@ -188,9 +188,13 @@ ul {
   li::before {
     content: "  > ";
   }
-  padding-inline-start: 0;
+  padding-inline-start: 0ch;
   list-style: none;
   margin: 1.4em 0 1.4em 1ch;
+}
+ol {
+  padding-inline-start: 0ch;
+  margin: 1.4em 0 1.4em 4ch;
 }
 
 pre {
