@@ -1,4 +1,4 @@
-<figure>
+<figure {% if class %}class="{{ class }}"{% endif %}>
   <img src="{{ img }}" alt="{{ description }}" {% if small %}class="small-image"{% endif %}>
   <figcaption>
     {% if not hidetext %}{{ description }}{% endif %} {% if credits %}Kuva: {{
