@@ -130,16 +130,12 @@ img {
 }
 
 figure {
-  max-width: 100%;
   text-align: center;
   margin: 1.4em 1ch 1.4em 1ch;
 
   img {
     display: inline-block;
-    max-width: 100%;
-  }
-  .small-image {
-    max-height: 50vh;
+    width: 100%;
   }
 
   figcaption {
@@ -148,10 +144,35 @@ figure {
   }
 }
 
+// custom figure classes
+.small-figure {
+  max-width: 40vh;
+}
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+//
+
 .sideBySideImages {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+
+  .imgWrapper {
+    width: 100%;
+  }
+
+  .img {
+    width: 100%;
+    padding-top: 100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position: center;
+  }
 }
 
 .emoji {

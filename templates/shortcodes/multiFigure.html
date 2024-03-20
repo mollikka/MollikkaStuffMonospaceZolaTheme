@@ -1,10 +1,12 @@
-<figure>
+<figure {% if class %}class="{{ class }}"{% endif %}>
     <div class="sideBySideImages">
         {% for img in images %}
-        <img src="{{ img }}" alt="{{ description }}">
+        <div class="imgWrapper">
+            <div class="img" style="background-image: url('{{ img }}')"></div>
+        </div>
         {% endfor %}
     </div>
     <figcaption>
-        {{ description }}
+        {% if not hidetext %}{{ description }}{% endif %}
     </figcaption>
 </figure>
