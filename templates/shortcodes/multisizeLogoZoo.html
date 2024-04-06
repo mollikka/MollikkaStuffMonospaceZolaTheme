@@ -2,10 +2,10 @@
 {% set img_profile_pic = resize_image(path=img, width=184, height=184, op="fit") %}
 {% set img_very_small = resize_image(path=img, width=64, height=64, op="fit") %}
 <h2>{{ description }}</h2>
-<figure>
-  <img src="{{ img }}" alt="{{ description }}">
-  <img src="{{ img_medium.url }}" alt="{{ description }}">
-  <img src="{{ img_profile_pic.url }}" alt="{{ description }}">
-  <img src="{{ img_very_small.url }}" alt="{{ description }}">
-</figure>
+
+<img src="{{ img }}" alt="{{ description }}">
+<img src="{{ img_medium.url }}" alt="{{ description }}">
+<img src="{{ img_profile_pic.url }}" alt="{{ description }}">
+<img src="{{ img_very_small.url }}" alt="{{ description }}">
+
   

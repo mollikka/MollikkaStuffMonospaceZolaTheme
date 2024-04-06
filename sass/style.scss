@@ -1,6 +1,8 @@
-$background-green: #232323;
-$accent-back-green: #505050;
-$accent-front-green: #aaaaaa;
+$background-gray: #232323;
+$accent-back-gray: #505050;
+$accent-front-gray: #aaaaaa;
+
+$accent-back-green: #25533b;
 
 $background-blue: #281e24;
 $accent-back-blue: #2163a1;
@@ -12,8 +14,13 @@ $accent-front-red: #f97bba;
 
 body,
 .themeDefault {
-  --background-color: #{$background-green};
-  --accent-color-front: #{$accent-front-green};
+  --background-color: #{$background-gray};
+  --accent-color-front: #{$accent-front-gray};
+  --accent-color-back: #{$accent-back-gray};
+}
+.themeGreen {
+  --background-color: #{$background-gray};
+  --accent-color-front: #{$accent-front-gray};
   --accent-color-back: #{$accent-back-green};
 }
 .themeBlue {
@@ -127,6 +134,7 @@ h3 {
 
 img {
   vertical-align: middle;
+  max-width: 100%;
 }
 
 figure {
@@ -155,6 +163,18 @@ figure {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+}
+.pixelart {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+	/* IE, only works on <img> tags */
+	-ms-interpolation-mode: nearest-neighbor;
+	/* firefox */
+	image-rendering: crisp-edges;
+	/* other browsers and spec */
+	image-rendering: pixelated;
 }
 //
 
