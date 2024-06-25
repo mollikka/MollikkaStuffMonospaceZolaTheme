@@ -1,3 +1,3 @@
-<script type="math/tex;mode=display">
-  {{body}}
-</script>
+<figure>
+  {{ load_data(url="http://127.0.0.1:8000", method="POST", body=body) | safe }}
+</figure>
