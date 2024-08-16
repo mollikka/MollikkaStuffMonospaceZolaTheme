@@ -179,21 +179,8 @@ figure {
 }
 //
 
-.sideBySideImages {
+.sideBySide {
   display: flex;
-  justify-content: center;
-
-  .imgWrapper {
-    width: 100%;
-  }
-
-  .img {
-    width: 100%;
-    padding-top: 100%;
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position: center;
-  }
 }
 
 .emoji {
