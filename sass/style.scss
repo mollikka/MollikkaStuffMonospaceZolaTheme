@@ -72,6 +72,11 @@ body {
     top: 1.4em;
     width: 30ch;
     overflow-wrap: break-word;
+
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -188,15 +193,11 @@ ul {
   }
   padding-inline-start: 0ch;
   list-style: none;
-  margin: 0 0 0 1ch;
+  margin: 1.4em 0 1.4em 1ch;
 }
 ol {
   padding-inline-start: 0ch;
   margin: 0 0 0 4ch;
-}
-
-pre {
-  overflow: scroll;
 }
 
 .artwork {
@@ -260,4 +261,18 @@ blockquote {
 
 code {
   white-space: pre-wrap;
+}
+
+thead {
+  text-align: left;
+}
+
+table {
+  border-spacing: 0;
+}
+td {
+  padding: 0em 1ch 0em 0ch;
+}
+th {
+  padding: 0em 1ch 0em 1ch;
 }
