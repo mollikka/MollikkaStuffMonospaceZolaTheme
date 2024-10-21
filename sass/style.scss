@@ -34,22 +34,6 @@ body,
   --accent-color-back: #{$accent-back-red};
 }
 
-@media print {
-  /* All your print styles go here */
-  header,
-  footer,
-  nav {
-    display: none !important;
-  }
-  body {
-    color: black !important;
-    max-width: 100% !important;
-  }
-  a::after {
-    content: " (" attr(href) ") ";
-  }
-}
-
 html {
   font-size: 62.5%;
 }
@@ -100,7 +84,7 @@ body {
 h1,
 h2,
 h3 {
-  color: white !important;
+  color: white;
 }
 
 h1 {
@@ -188,7 +172,7 @@ figure {
   width: 2ch;
 }
 
-p {
+p, h1, h2, h3, h4, h5 {
   margin-top: 1.4em;
   margin-bottom: 1.4em;
 }

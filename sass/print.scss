@@ -1,0 +1,51 @@
+@page {
+    size: A4;
+    margin-top: 25mm;
+    margin-right: 20mm;
+    margin-bottom: 20mm;
+    margin-left: 20mm;
+}
+
+/* All your print styles go here */
+header,
+footer,
+nav {
+    display: none !important;
+}
+body {
+    font-size: 1.2rem;
+    color: black !important;
+    background-color: white !important;
+    max-width: 100% !important;
+}
+a {
+    color: black !important;
+}
+
+a::after {
+    content: " (" attr(href) ") ";
+}
+a.hide-print-link::after {
+    content: "";
+}
+
+.hide-print, .table-of-contents {
+    display: none;
+}
+
+.math-formula {
+    filter: invert(100%);
+}
+
+h1,
+h2,
+h3 {
+    color: black !important;
+    font-weight: bolder !important;
+    text-decoration: underline !important;
+    background-color: transparent !important;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}

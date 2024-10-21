@@ -2,7 +2,7 @@
   <img src="{{ img }}" alt="{{ description }}">
   <figcaption>
     {% if not hidetext %}{{ description }}{% endif %}
-    {% if creditsLink %}<a href="{{ creditsLink }}">{% endif %}
+    {% if creditsLink %}<a class="hide-print-link" href="{{ creditsLink }}">{% endif %}
     {% if credits %}Kuva: {{ credits }}{% endif %}
     {% if creditsLink %}</a>{% endif %}
   </figcaption>
