@@ -1,5 +1,17 @@
 <figure {% if class %}class="{{ class }}"{% endif %}>
-  <img src="{{ img }}" alt="{{ description }}">
+  {% if img %}
+    {% set document = page | default(value=section) %}
+    {% set img_medium = resize_image(path=document.colocated_path ~ img, width=800, height=600, op="fit") %}
+    <a href="{{img}}">
+      <img src="{{ img_medium.url }}" alt="{{ description }}">
+    </a>
+  {% endif %}
+  {% if imgAbsolute %}
+    {% set img_medium = resize_image(path=imgAbsolute, width=800, height=600, op="fit") %}
+    <a href="{{imgAbsolute}}">
+      <img src="{{ img_medium.url }}" alt="{{ description }}">
+    </a>
+  {% endif%}
   <figcaption>
     {% if not hidetext %}{{ description }}{% endif %}
     {% if creditsLink %}<a class="hide-print-link" href="{{ creditsLink }}">{% endif %}
