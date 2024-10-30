@@ -64,22 +64,6 @@ body {
   }
 }
 
-@media screen and (min-width: 84em) {
-  .table-of-contents {
-    display: block;
-    position: fixed;
-    left: 2ch;
-    top: 1.4em;
-    width: 30ch;
-    overflow-wrap: break-word;
-
-    ul {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-}
-
 .decorative-ascii {
   color: var(--accent-color-back);
   overflow: hidden;
@@ -198,6 +182,11 @@ ul {
 ol {
   padding-inline-start: 0ch;
   margin: 0 0 0 4ch;
+}
+
+.table-of-contents {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
 }
 
 .artwork {

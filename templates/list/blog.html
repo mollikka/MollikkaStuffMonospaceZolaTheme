@@ -3,8 +3,6 @@
 {% block content %}
 <h1 class="title">{{ section.title }}</h1>
 
-<nav>{% include "tableOfContents/year.html" %}</nav>
-
 {% for year, posts in section.pages | group_by(attribute="year") %}
 <h2 id="year-{{ year }}">{{ year }}</h2>
 <ul>
