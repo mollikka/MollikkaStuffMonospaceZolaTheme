@@ -2,13 +2,13 @@
   {% if img %}
     {% set document = page | default(value=section) %}
     {% set img_medium = resize_image(path=document.colocated_path ~ img, width=800, height=600, op="fit") %}
-    <a href="{{img}}">
+    <a href="{{img}}" class="hide-print-link">
       <img src="{{ img_medium.url }}" alt="{{ description }}">
     </a>
   {% endif %}
   {% if imgAbsolute %}
     {% set img_medium = resize_image(path=imgAbsolute, width=800, height=600, op="fit") %}
-    <a href="{{imgAbsolute}}">
+    <a href="{{imgAbsolute}}" class="hide-print-link">
       <img src="{{ img_medium.url }}" alt="{{ description }}">
     </a>
   {% endif%}
