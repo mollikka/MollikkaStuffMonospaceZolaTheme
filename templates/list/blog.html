@@ -3,19 +3,33 @@
 {% block content %}
 <h1 class="title">{{ section.title }}</h1>
 
-{% for year, posts in section.pages | group_by(attribute="year") %}
-<h2 id="year-{{ year }}">{{ year }}</h2>
-<ul>
-  {% for page in posts %} 
+{% if section.extra.featured_tags %}
+  <nav class="linemenu">
+    {% for tag in section.extra.featured_tags %}
+      {% set url = get_taxonomy_url(kind="tags", name=tag) %}
+      <div>\&nbsp;<a href="{{ url }}">{{ tag }}</a>&nbsp;\</div>
+    {% endfor %}
+  </nav>
+{% endif %}
+
+{% for page in section.pages %} 
   {% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
-  <li>
+  <a href="{{ page.permalink | safe }}">
+  <h3>
+    {% for term in languages %}
+      {% if term == "Suomi" %}<span class="emoji">🇫🇮</span>{% endif %}
+      {% if term == "English" %}<span class="emoji">🇺🇸</span>{% endif %}
+    {% endfor %}
+    {{ page.title }} ({{ page.date }})  
+  </h3>
+  </a>
+  {% if page.extra.image %}
     <a href="{{ page.permalink | safe }}">
-      {% for term in languages %}{% if term == "Suomi" %}<span class="emoji">🇫🇮</span>{% endif %}{% if term == "English" %}<span class="emoji">🇺🇸</span>{% endif %}{% endfor %}
-      {{ page.title }} ({{ page.year }})  
+    {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=800, height=400, op="fill") %}
+    <img src="{{ img_preview.url }}" alt="{{ page.description }}">
     </a>
-  </li>
-  {% endfor %}
-</ul>
+  {% endif %}
+  <p>{{page.description}}</p>
 {% endfor %}
 
 {% endblock content %}

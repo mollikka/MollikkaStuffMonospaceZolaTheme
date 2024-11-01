@@ -1,16 +1,12 @@
-{% extends "section.html" %}
+{% extends "section.html" %} 
 
 {% block content %}
-<h1>{{ section.title }}</h1>
+<h1 class="title">{{ section.title }}</h1>
 
-{% for ss in section.subsections %} {% set subsection = get_section(path=ss) %}
-<h2 id="subsection-{{ subsection.components | last | safe }}">
-  <a href="{{ subsection.permalink }}"
-    >{{ subsection.components | last | capitalize | safe }}</a
-  >
-</h2>
+{% for year, posts in section.pages | group_by(attribute="year") %}
+<h2 id="year-{{ year }}">{{ year }}</h2>
 <ul>
-  {% for page in subsection.pages %}
+  {% for page in posts %} 
   {% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
   <li>
     <a href="{{ page.permalink | safe }}">
@@ -20,4 +16,6 @@
   </li>
   {% endfor %}
 </ul>
-{% endfor %} {% endblock content %}
+{% endfor %}
+
+{% endblock content %}
