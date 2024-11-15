@@ -2,7 +2,9 @@
 
 {% block content %}
 <h1>{{ section.title }}</h1>
+{% if section.extra.tableOfContents %}
 <nav>{% include "tableOfContents/subsection.html" %}</nav>
+{% endif %}
 
 {% for ss in section.subsections %} {% set subsection = get_section(path=ss) %}
 <h2 id="subsection-{{ subsection.components | last | safe }}">

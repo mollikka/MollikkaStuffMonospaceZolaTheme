@@ -7,29 +7,34 @@
   <nav class="linemenu">
     {% for tag in section.extra.featured_tags %}
       {% set url = get_taxonomy_url(kind="tags", name=tag) %}
-      <div>\&nbsp;<a href="{{ url }}">{{ tag }}</a>&nbsp;\</div>
+      <div>\&nbsp;<a href="{{ url }}">#{{ tag }}</a>&nbsp;\</div>
     {% endfor %}
   </nav>
 {% endif %}
 
 {% for page in section.pages %} 
-  {% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
-  <a href="{{ page.permalink | safe }}">
-  <h3>
-    {% for term in languages %}
-      {% if term == "Suomi" %}<span class="emoji">🇫🇮</span>{% endif %}
-      {% if term == "English" %}<span class="emoji">🇺🇸</span>{% endif %}
-    {% endfor %}
-    {{ page.title }} ({{ page.date }})  
-  </h3>
-  </a>
-  {% if page.extra.image %}
+  <article>
+    {% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
     <a href="{{ page.permalink | safe }}">
-    {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=800, height=400, op="fill") %}
-    <img src="{{ img_preview.url }}" alt="{{ page.description }}">
+    <h2>
+      {% for term in languages %}
+        {% if term == "Suomi" %}<span class="emoji">🇫🇮</span>{% endif %}
+        {% if term == "English" %}<span class="emoji">🇺🇸</span>{% endif %}
+      {% endfor %}
+      {{ page.title }} ({{ page.date }})  
+    </h2>
     </a>
+    {% if page.extra.image %}
+      <a href="{{ page.permalink | safe }}" class="hide-print-link">
+      {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=800, height=400, op="fill") %}
+      <img src="{{ img_preview.url }}" alt="{{ page.description }}">
+      </a>
+    {% endif %}
+    <p>{{page.description}}</p>
+  </article>
+  {% if not loop.last %}
+    {% include "include/divider.html" %}
   {% endif %}
-  <p>{{page.description}}</p>
 {% endfor %}
 
 {% endblock content %}
