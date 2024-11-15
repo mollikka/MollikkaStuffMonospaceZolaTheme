@@ -1,5 +1,5 @@
 <aside class="comment">
-  <img class="comment-avatar" src="{{ config.extra.author_portrait }}">
+  <img class="comment-avatar" src="{{ section.extra.portrait | default(value=config.extra.author_portrait) | safe }}">
     <div class="comment-text"><div class="date">{{ date }}</div>
         {{ body | markdown | safe }}
     </div>
