@@ -6,7 +6,9 @@
 <p><emph>{{ page.description }}</emph></p>
 <nav>{% include "include/tags.html" %}</nav>
 <nav>{% include "include/series.html" %}</nav>
+{% if page.extra.tableOfContents %}
 <nav>{% include "tableOfContents/h1.html" %}</nav>
+{% endif %}
 {% include "include/divider.html" %}
 
 {{ page.content | safe }} {% endblock content %}
