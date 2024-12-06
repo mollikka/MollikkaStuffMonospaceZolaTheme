@@ -6,6 +6,8 @@
 <nav>{% include "tableOfContents/subsection.html" %}</nav>
 {% endif %}
 
+{{ section.content | safe }}
+
 {% for ss in section.subsections %} {% set subsection = get_section(path=ss) %}
 <h2 id="subsection-{{ subsection.components | last | safe }}">
   <a href="{{ subsection.permalink }}"

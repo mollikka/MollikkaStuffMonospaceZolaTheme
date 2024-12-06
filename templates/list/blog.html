@@ -12,6 +12,8 @@
   </nav>
 {% endif %}
 
+{{ section.content | safe }}
+
 {% for page in section.pages %} 
   <article>
     {% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
