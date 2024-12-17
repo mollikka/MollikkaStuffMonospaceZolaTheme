@@ -1,0 +1,12 @@
+{% set qr_code_base64 = load_data(
+    url="http://127.0.0.1:8000/qrcode",
+    method="POST",
+    body=body
+) %}
+
+<figure class="qrcode">
+    <img
+      src="data:image/png;base64,{{ qr_code_base64 }}"
+      alt="{{ body }}">
+</figure>
+  
