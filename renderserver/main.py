@@ -13,7 +13,6 @@ class MultiHandler(BaseHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers['Content-Length'])
         requestString = self.rfile.read(content_length).decode('utf-8')
-        print(requestString)
         renderResult = self.render(requestString)
 
         if renderResult is None:
@@ -29,7 +28,7 @@ class MultiHandler(BaseHTTPRequestHandler):
 
 def run(port=8000):
     server = HTTPServer(('', port), MultiHandler)
-    print('Starting render server on port {port}...')
+    print(f'Starting render server on port {port}...')
     server.serve_forever()
 
 if __name__ == '__main__':
