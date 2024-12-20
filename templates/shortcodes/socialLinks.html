@@ -1,10 +1,13 @@
 {% set menu = config.extra.social_links -%}
+
 <ul>
-    {% for link in menu %}
-        <li><a
-            {% if link.theme %} class="{{ link.theme }}" {% else %} class="themeDefault" {% endif %}
-            href="{{ link.url }}">{{ link.name }}
-            </a>
-        </li>
-    {% endfor %}
+  {% for link in menu %}
+    <li>
+      <a
+        {% if link.theme %} class="{{ link.theme }}" {% else %} class="themeDefault" {% endif %}
+        href="{{ link.url }}">
+        {{ link.name }}
+      </a>
+    </li>
+  {% endfor %}
 </ul>

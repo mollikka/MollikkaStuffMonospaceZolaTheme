@@ -57,13 +57,9 @@
       <nav class="themeDefault linemenu">
         <div><a href="../">&lt;&lt;</a></div>
         {% for link in menu %}<div>/&nbsp;<a
-            {% if link.theme %}
-              class="{{ link.theme }}"
-            {% else %}
-              class="themeDefault"
-            {% endif %}
-            href="{{ link.url }}"
-            >{{ link.name }}</a>&nbsp;/</div>{% endfor %}
+          {% if link.theme %}class="{{ link.theme }}"{% else %}class="themeDefault"{% endif %}
+          href="{{ link.url }}"
+          >{{ link.name }}</a>&nbsp;/</div>{% endfor %}
       </nav>
       <div aria-hidden="true" class="decorative-ascii">
         \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

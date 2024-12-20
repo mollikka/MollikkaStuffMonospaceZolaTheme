@@ -1,13 +1,16 @@
 {% extends "page.html" %}
 
 {% block content %}
+
 <h1>{{ page.title }}{% if page.year %} ({{ page.year }}){% endif %}</h1>
 <p class="date">{{ page.date }}</p>
 <nav>{% include "include/tags.html" %}</nav>
 <nav>{% include "include/series.html" %}</nav>
 {% include "include/language.html" %}
 {% if page.extra.tableOfContents %}
-<nav>{% include "tableOfContents/h1.html" %}</nav>
+  <nav>{% include "tableOfContents/h1.html" %}</nav>
 {% endif %}
 
-{{ page.content | safe }} {% endblock content %}
+{{ page.content | safe }}
+
+{% endblock content %}

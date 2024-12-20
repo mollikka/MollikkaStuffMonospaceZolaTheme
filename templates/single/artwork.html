@@ -1,12 +1,17 @@
 {% extends "page.html" %} 
 
 {% block content %}
+
 <h1>{{ page.title }} ({{ page.year }})</h1>
 <p class="date">{{ page.date }}</p>
 <nav>{% include "include/tags.html" %}</nav>
 
 {% if page.extra.image %}
-<a class="hide-print-link" href="{{ page.extra.image }}"><img class="artwork" src="{{ page.extra.image }}"></a>
+  <a class="hide-print-link" href="{{ page.extra.image }}">
+    <img class="artwork" src="{{ page.extra.image }}">
+  </a>
 {% endif %}
 
-{{ page.content | safe }} {% endblock content %}
+{{ page.content | safe }}
+
+{% endblock content %}

@@ -1,4 +1,5 @@
 {% set section_or_page = section | default(value = page) -%}
+
 <aside class="comment">
   <img class="comment-avatar" src="{{ section_or_page.extra.portrait | default(value=config.extra.default_portrait) | safe }}">
     <div class="comment-text"><div class="date">{{ date }}</div>

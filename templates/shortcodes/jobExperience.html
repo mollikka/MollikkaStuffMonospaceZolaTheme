@@ -1,10 +1,10 @@
 <p>
   {{ employer }}
-  <span class="date"
-    >{% if startYear %}{{ startYear }} - {% if endYear %}{{ endYear }}{% endif
-    %}{% else %}{{ year }}{% endif %}</span
-  >
+  <span class="date">
+    {% if startYear %}{{ startYear }} - {% if endYear %}{{ endYear }}{% endif %}
+    {% else %}{{ year }}{% endif %}
+  </span>
 </p>
 {% if skills %}
-<p><em>{{ skills }}</em></p>
+  <p><em>{{ skills }}</em></p>
 {% endif %}

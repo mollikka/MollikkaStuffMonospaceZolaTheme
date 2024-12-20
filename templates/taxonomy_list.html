@@ -7,10 +7,10 @@
 {% block content %}
 <h1>{{ taxonomy.name | title }}</h1>
 <ul>
-    {% for term in terms %}
-  <li>
-    <a href="{{ term.permalink | safe }}">{{ term.name | title }}</a>
-  </li>
+  {% for term in terms %}
+    <li>
+      <a href="{{ term.permalink | safe }}">{{ term.name | title }}</a>
+    </li>
   {% endfor %}
 </ul>
 {% endblock content %}

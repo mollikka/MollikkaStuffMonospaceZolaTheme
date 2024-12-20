@@ -5,12 +5,12 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="title">{{ taxonomy.name | title }}: {{ term.name | title }}</h1>
+<h1>{{ taxonomy.name | title }}: {{ term.name | title }}</h1>
 <ul>
   {% for page in term.pages %}
-  <li>
-    <a href="{{ page.permalink | safe }}">{{ page.title }} ({{ page.year }})</a>
-  </li>
+    <li>
+      <a href="{{ page.permalink | safe }}">{{ page.title }} ({{ page.year }})</a>
+    </li>
   {% endfor %}
 </ul>
 {% endblock content %}

@@ -1,7 +1,7 @@
 {% extends "section.html" %} 
 
 {% block content %}
-<h1 class="title">{{ section.title }}</h1>
+<h1>{{ section.title }}</h1>
 
 {% if section.extra.featured_tags %}
   <nav class="linemenu">
@@ -26,8 +26,8 @@
     </a>
     {% if page.extra.image %}
       <a href="{{ page.permalink | safe }}" class="hide-print-link">
-      {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=800, height=400, op="fill") %}
-      <img src="{{ img_preview.url }}" alt="{{ page.description }}">
+        {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=800, height=400, op="fill") %}
+        <img src="{{ img_preview.url }}" alt="{{ page.description }}">
       </a>
     {% endif %}
     <p>{{page.description}}</p>

@@ -9,9 +9,9 @@
 <h1>{{ section.title }}</h1>
 {{ section.content | safe }} 
 
-{% set featured = get_taxonomy_term(kind="tags", term="featured") %}
-
 <h2><a href="/tags/featured">Featured</a></h2>
+
+{% set featured = get_taxonomy_term(kind="tags", term="featured") %}
 {% set posts = featured.pages %}
 {% include "include/posts/gallery.html" %}
 

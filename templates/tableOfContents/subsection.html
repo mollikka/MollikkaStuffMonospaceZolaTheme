@@ -3,14 +3,14 @@
     =====--------------------=====
   </div>
   <ul>
-    {% for ss in section.subsections %} {% set subsection = get_section(path=ss)
-    %}
-    <li>
-      <a href="#subsection-{{ subsection.components | last | safe }}">
-        {{ subsection.components | last | capitalize | safe }}
-      </a>
-      {% endfor %}
-    </li>
+    {% for ss in section.subsections %}
+      {% set subsection = get_section(path=ss) %}
+      <li>
+        <a href="#subsection-{{ subsection.components | last | safe }}">
+          {{ subsection.components | last | capitalize | safe }}
+        </a>
+      </li>
+    {% endfor %}
   </ul>
   <div aria-hidden="true" class="decorative-ascii">
     =====--------------------=====

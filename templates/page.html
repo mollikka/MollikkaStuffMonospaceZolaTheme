@@ -3,19 +3,17 @@
 {% block metadata %}
 <title>Lauri Tervonen - {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}</title>
 <meta name="description" content="{{ page.description }}">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ current_url | safe }}">
 <meta property="og:title" content="Lauri Tervonen - {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}">
 <meta property="og:description" content="{{ page.description }}">
 {% if page.extra.image %}
-<meta property="og:image" content="{{ current_url | safe }}/{{ page.extra.image }}">
+    <meta property="og:image" content="{{ current_url | safe }}/{{ page.extra.image }}">
 {% endif %}
-
 {% endblock %}
 
 {% block content %} 
 <h1>{{ page.title | safe }}</h1>
-{{ page.content | safe }} {%
-endblock content %}
+{{ page.content | safe }} 
+{% endblock content %}
 

@@ -2,11 +2,13 @@
 {% for page in posts %}
   <li>
     <a href="{{ page.permalink | safe }}">
-    {{ page.title }} ({{ page.year }}) {% for asset in page.assets %} {%- if
-    asset is matching(page.extra.image) -%} {% set image =
-    resize_image(path=asset, width=400, height=400) %}
-    <img class="thumbnail" src="{{ image.url }}">
-    {% endif %} {% endfor %}
+    {{ page.title }} ({{ page.year }}) 
+    {% for asset in page.assets %} 
+      {%- if asset is matching(page.extra.image) -%} 
+        {% set image = resize_image(path=asset, width=400, height=400) %}
+        <img class="thumbnail" src="{{ image.url }}">
+      {% endif %}
+    {% endfor %}
     </a>
   </li>
 {% endfor %} 
