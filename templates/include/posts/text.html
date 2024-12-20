@@ -2,7 +2,6 @@
   {% for page in posts %} 
   <li>
     <a href="{{ page.permalink | safe }}">
-      {% include "include/language.html" %}
       {{ page.title }} ({{ page.year }})  
     </a>
   </li>
