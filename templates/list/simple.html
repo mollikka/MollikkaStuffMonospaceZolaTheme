@@ -9,10 +9,9 @@
 <h2 id="year-{{ year }}">{{ year }}</h2>
 <ul>
   {% for page in posts %} 
-  {% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
   <li>
     <a href="{{ page.permalink | safe }}">
-      {% for term in languages %}{% if term == "Suomi" %}FI{% endif %}{% if term == "English" %}EN{% endif %}{% endfor %}
+      {% include "include/language.html" %}
       {{ page.title }} ({{ page.year }})  
     </a>
   </li>

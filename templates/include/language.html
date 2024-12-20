@@ -1,0 +1,5 @@
+{% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
+{% for term in languages %}
+    {% if term == "Suomi" %}<span class="language">fi_FI</span>{% endif %}
+    {% if term == "English" %}<span class="language">en_US</span>{% endif %}
+{% endfor %}
