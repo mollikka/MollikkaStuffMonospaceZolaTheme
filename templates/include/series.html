@@ -1,9 +1,8 @@
 {% set series = page | get(key="taxonomies", default=[]) | get(key="series", default=[]) | sort -%}
 {% set seriescount = series | length %}
 {% if seriescount > 0 %}
-Series:
 {% for term in series %}
 {% set url = get_taxonomy_url(kind="series", name=term) %}
-<a href="{{ url }}">{{ term }}</a> 
+<a href="{{ url }}">#{{ term }}</a> 
 {% endfor %}
 {% endif %}
