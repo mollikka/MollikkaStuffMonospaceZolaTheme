@@ -14,6 +14,8 @@
 
 {{ section.content | safe }}
 
+{% include "include/divider.html" %}
+
 {% for page in section.pages %} 
   <article>
     <a href="{{ page.permalink | safe }}">
