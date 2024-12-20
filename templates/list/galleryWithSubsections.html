@@ -14,17 +14,10 @@
     >{{ subsection.components | last | capitalize | safe }}</a
   >
 </h2>
-<ul class="gallery">
-  {% for page in subsection.pages | slice(end=2) %}
-  <li>
-    <a href="{{ page.permalink | safe }}">
-      {{ page.title }} ({{ page.year }}) {% for asset in page.assets %} {%- if
-      asset is matching(page.extra.image) -%} {% set image =
-      resize_image(path=asset, width=400, height=400) %}
-      <img class="thumbnail" src="{{ image.url }}">
-      {% endif %} {% endfor %}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
-{% endfor %} {% endblock content %}
+
+{% set posts = subsection.pages | slice(end=2) %}
+{% include "include/posts/gallery.html" %}
+
+{% endfor %}
+
+{% endblock content %}

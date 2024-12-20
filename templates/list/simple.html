@@ -7,7 +7,7 @@
 
 {% for year, posts in section.pages | group_by(attribute="year") %}
 <h2 id="year-{{ year }}">{{ year }}</h2>
-{% include "include/pages.html" %}
+{% include "include/posts/text.html" %}
 {% endfor %}
 
 {% endblock content %}

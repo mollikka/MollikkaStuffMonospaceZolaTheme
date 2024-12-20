@@ -8,14 +8,15 @@
 
 {{ section.content | safe }}
 
-{% for ss in section.subsections %} {% set subsection = get_section(path=ss) %}
+{% for ss in section.subsections %}
+{% set subsection = get_section(path=ss) %}
 <h2 id="subsection-{{ subsection.components | last | safe }}">
-  <a href="{{ subsection.permalink }}"
-    >{{ subsection.components | last | capitalize | safe }}</a
-  >
+  <a href="{{ subsection.permalink }}">
+    {{ subsection.components | last | capitalize | safe }}
+  </a>
 </h2>
 {% set posts = subsection.pages %}
-{% include "include/pages.html" %}
+{% include "include/posts/text.html" %}
 {% endfor %} 
 
 {% endblock content %}

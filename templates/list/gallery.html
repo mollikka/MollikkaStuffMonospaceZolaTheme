@@ -5,17 +5,7 @@
 
 {{ section.content | safe }}
 
-<ul class="gallery">
-{% for page in section.pages %}
-  <li>
-    <a href="{{ page.permalink | safe }}">
-      {{ page.title }} ({{ page.year }}) {% for asset in page.assets %} {%- if
-      asset is matching(page.extra.image) -%} {% set image =
-      resize_image(path=asset, width=400, height=400) %}
-      <img class="thumbnail" src="{{ image.url }}">
-      {% endif %} {% endfor %}
-    </a>
-  </li>
-{% endfor %} 
-</ul>
+{% set posts = section.pages %}
+{% include "include/posts/gallery.html" %}
+
 {% endblock content %}
