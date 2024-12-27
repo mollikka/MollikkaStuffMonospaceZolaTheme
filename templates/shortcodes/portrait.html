@@ -1,2 +1,2 @@
-{% set section_or_page = section | default(value = page) -%}
-<img src="{{ section_or_page.extra.portrait | default(value=config.extra.default_portrait) | safe }}" class="cv-portrait" alttext="Lauri Tervonen">
+{% set portrait = section.extra.portrait | default(value = page.extra.portrait) %}
+<img src="{{ config.extra.portraits[portrait] }}" class="cv-portrait" alttext="Lauri Tervonen">
