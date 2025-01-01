@@ -15,6 +15,8 @@
 
 {% include "include/divider.html" %}
 
+{% block page %}
 {{ page.content | safe }}
+{% endblock %}
 
 {% endblock content %}

@@ -1,18 +1,10 @@
-{% extends "page.html" %} 
+{% extends "single/essay.html" %}
 
-{% block content %}
-
-<h1>{{ page.title }}{% if page.year %} ({{ page.year }}){% endif %}</h1>
-{% if page.date %}<p class="date">{{ page.date }}</p>{% endif %}
-{% if page.updated %}<p class="date">Updated: {{ page.updated }}</p>{% endif %}
-<nav>{% include "include/tags.html" %}</nav>
-
+{% block page %}
 {% if page.extra.image %}
   <a class="hide-print-link" href="{{ page.extra.image }}">
     <img class="artwork" src="{{ page.extra.image }}">
   </a>
 {% endif %}
-
 {{ page.content | safe }}
-
 {% endblock content %}
