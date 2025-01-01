@@ -2,7 +2,7 @@
   {% for page in posts %} 
   <li>
     <a href="{{ page.permalink | safe }}">
-      {{ page.title }} ({{ page.year }})  
+      {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}
     </a>
   </li>
   {% endfor %}

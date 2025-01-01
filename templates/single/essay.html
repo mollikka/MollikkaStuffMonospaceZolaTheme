@@ -3,7 +3,8 @@
 {% block content %}
 
 <h1>{{ page.title }}{% if page.year %} ({{ page.year }}){% endif %}</h1>
-<p class="date">{{ page.date }}</p>
+{% if page.date %}<p class="date">{{ page.date }}</p>{% endif %}
+{% if page.updated %}<p class="date">{{ page.updated }}</p>{% endif %}
 <nav>{% include "include/tags.html" %}</nav>
 <nav>{% include "include/series.html" %}</nav>
 {% include "include/language.html" %}
