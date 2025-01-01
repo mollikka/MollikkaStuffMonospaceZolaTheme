@@ -4,6 +4,6 @@
 {% if seriescount > 0 %}
   {% for term in series %}
     {% set url = get_taxonomy_url(kind="series", name=term) %}
-    <a href="{{ url }}">#{{ term }}</a> 
+    Series: <a href="{{ url }}">{{ term }}</a> 
   {% endfor %}
 {% endif %}
