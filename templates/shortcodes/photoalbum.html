@@ -1,4 +1,4 @@
-{% for asset in section.assets %}
+{% for asset in page.assets %}
   {% if asset is matching("[.](jpg|png)$") %}
     {% set image = resize_image(path=asset, width=600, height=600, op="fit") %}
     <figure>
