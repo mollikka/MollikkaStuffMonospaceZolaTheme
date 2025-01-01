@@ -2,8 +2,10 @@
 {% set tagcount = tags | length %}
 
 {% if tagcount > 0 %}
-  {% for term in tags %}
-    {% set url = get_taxonomy_url(kind="tags", name=term) %}
-    <a href="{{ url }}">#{{ term }}</a> 
-  {% endfor %}
+  <nav>
+    {% for term in tags %}
+      {% set url = get_taxonomy_url(kind="tags", name=term) %}
+      <a href="{{ url }}">#{{ term }}</a> 
+    {% endfor %}
+  </nav>
 {% endif %}
