@@ -2,7 +2,7 @@
 {% for page in posts %}
   <li>
     <a href="{{ page.permalink | safe }}">
-      {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}
+      {{ page.title }}{% if page.year %} ({{page.year}}){% endif %} {% include "include/language.html" %}
       {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=400, height=400) %}
       <img class="thumbnail" src="{{ img_preview.url }}">
     </a>

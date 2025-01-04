@@ -3,6 +3,9 @@
 {% if page %}
   {% set sectionName = page.ancestors | last %}
   {% set section = get_section(path=sectionName) %}
+  {% set language = page | get(key="taxonomies", default=[]) | get(key="Language", default=["en-US"]) | sort | first -%}
+{% else %}
+  {% set language = "en-US" %}
 {% endif %}
 
 {% if section and section.extra.theme %}
@@ -23,7 +26,7 @@
 <!--    ##########  #    -->
 <!--    #  #  #  #  #    -->
 <!--    #############    -->
-<html lang="en">
+<html lang="{{language}}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

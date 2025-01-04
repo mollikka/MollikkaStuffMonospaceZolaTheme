@@ -20,7 +20,7 @@
   <article>
     <a href="{{ page.permalink | safe }}">
     <h2>
-      {{ page.title }} ({{ page.date }})  
+      {{ page.title }} ({{ page.date }})  {% include "include/language.html" %}
     </h2>
     </a>
     {% if page.extra.image %}
