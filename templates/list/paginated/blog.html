@@ -1,7 +1,6 @@
-{% extends "section.html" %} 
+{% extends "list/paginated.html" %} 
 
-{% block content %}
-<h1>{{ section.title }}</h1>
+{% block sectionContent %}
 
 {% if section.extra.featured_tags %}
   <nav class="linemenu">
@@ -14,9 +13,9 @@
 
 {{ section.content | safe }}
 
-{% include "include/paginatorMenu.html" %}
+{% endblock sectionContent %}
 
-{% include "include/divider.html" %}
+{% block pagepreviews %}
 
 {% for page in paginator.pages %} 
   <article>
@@ -38,4 +37,4 @@
   {% endif %}
 {% endfor %}
 
-{% endblock content %}
+{% endblock pagepreviews %}
