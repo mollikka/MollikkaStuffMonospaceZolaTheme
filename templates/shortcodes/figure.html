@@ -2,7 +2,7 @@
   {% if img %}
     {% set document = page | default(value=section) %}
     {% set img_medium = resize_image(path=document.colocated_path ~ img, width=800, height=600, op="fit") %}
-    <a href="{{img}}" class="hide-print-link">
+    <a href="{{config.base_url ~ document.colocated_path ~ img}}" class="hide-print-link">
       <img src="{{ img_medium.url }}" alt="{{ description }}">
     </a>
   {% endif %}
