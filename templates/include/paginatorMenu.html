@@ -1,0 +1,35 @@
+<nav class="linemenu">
+  {% if paginator.previous %}
+    <div>
+      <a href="{{ paginator.first }}">&lt;&lt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;&nbsp;</div>
+  {% endif %}
+
+  {% if paginator.previous %}
+    <div>
+      <a href="{{ paginator.previous }}">&lt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;</div>
+  {% endif %}
+
+  <div>{{ paginator.current_index }}</div>
+
+  {% if paginator.next %}
+    <div>
+      <a href="{{ paginator.next }}">&gt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;</div>
+  {% endif %}
+
+  {% if paginator.next %}
+    <div>
+      <a href="{{ paginator.last }}">&gt;&gt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;&nbsp;</div>
+  {% endif %}
+</nav>

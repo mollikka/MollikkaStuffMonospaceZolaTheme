@@ -14,9 +14,11 @@
 
 {{ section.content | safe }}
 
+{% include "include/paginatorMenu.html" %}
+
 {% include "include/divider.html" %}
 
-{% for page in section.pages %} 
+{% for page in paginator.pages %} 
   <article>
     <a href="{{ page.permalink | safe }}">
     <h2>
