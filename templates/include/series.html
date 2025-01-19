@@ -4,8 +4,14 @@
 {% if seriescount > 0 %}
   <nav>
     {% for term in series %}
+      {% set seriespages = (get_taxonomy_term(kind="series", term=term) | get(key="pages", default=[])) %}
+      
       {% set url = get_taxonomy_url(kind="series", name=term) %}
-      Series: <a href="{{ url }}">{{ term }}</a> 
+      Series: <a href="{{ url }}">{{ term }}</a> -
+
+      {% for seriespage in seriespages %}
+        {% if page.path == seriespage.path %}[{% endif %}<a href="{{ seriespage.path }}">{{ loop.index }}</a>{% if page.path == seriespage.path %}]{% endif %}
+      {% endfor %}
     {% endfor %}
   </nav>
 {% endif %}
