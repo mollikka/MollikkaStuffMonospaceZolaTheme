@@ -17,21 +17,25 @@ body,
   --background-color: #{$background-gray};
   --accent-color-front: #{$accent-front-gray};
   --accent-color-back: #{$accent-back-gray};
+  --text-color: #ffffff; 
 }
 .themeGreen {
   --background-color: #{$background-gray};
   --accent-color-front: #{$accent-front-gray};
   --accent-color-back: #{$accent-back-green};
+  --text-color: #ffffff; 
 }
 .themeBlue {
   --background-color: #{$background-blue};
   --accent-color-front: #{$accent-front-blue};
   --accent-color-back: #{$accent-back-blue};
+  --text-color: #ffffff; 
 }
 .themeRed {
   --background-color: #{$background-red};
   --accent-color-front: #{$accent-front-red};
   --accent-color-back: #{$accent-back-red};
+  --text-color: #ffffff; 
 }
 
 html {
@@ -45,7 +49,7 @@ html {
 }
 
 body {
-  color: white;
+  color: var(--text-color);
   background-color: var(--background-color);
 
   font-family: monospace;
@@ -73,9 +77,9 @@ body {
 h1,
 h2,
 h3 {
-  color: white;
+  color: var(--text-color);
   a {
-    color: white;
+    color: var(--text-color);
   }
 }
 
