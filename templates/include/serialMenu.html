@@ -1,0 +1,36 @@
+{% set last = section.pages | last %}
+{% set first = section.pages | first %}
+
+<nav class="linemenu">
+  {% if page.higher %}
+    <div>
+      <a href="{{ last.permalink }}">&lt;&lt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;&nbsp;</div>
+  {% endif %}
+
+  {% if page.higher %}
+    <div>
+      <a href="{{ page.higher.permalink }}">&lt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;</div>
+  {% endif %}
+
+  {% if page.lower %}
+    <div>
+      <a href="{{ page.lower.permalink }}">&gt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;</div>
+  {% endif %}
+
+  {% if page.lower %}
+    <div>
+      <a href="{{ first.permalink }}">&gt;&gt;</a>
+    </div>
+  {% else %}
+    <div>&nbsp;&nbsp;</div>
+  {% endif %}
+</nav>

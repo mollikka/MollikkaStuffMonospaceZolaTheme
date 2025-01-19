@@ -1,0 +1,8 @@
+{% extends "single/essay.html" %}
+
+{% block page %}
+
+    {% include "include/serialMenu.html" %}
+
+    {{ page.content | safe }}
+{% endblock %}
