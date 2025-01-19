@@ -1,19 +1,29 @@
+{% if alttext %}
+  {% set imageAlt = alttext %}
+{% else %}
+  {% set imageAlt = description %}
+{% endif %}
+
+{% if img %}
+  {% set document = page | default(value=section) %}
+  {% set imgUrl = document.colocated_path ~ img %}
+{% else %}
+  {% set imgUrl = imgAbsolute %}
+{% endif %}
+
+{% if useOriginalSize %}
+  {% set imgRenderUrl = config.base_url ~ imgUrl %}
+{% else %}
+  {% set imgRender = resize_image(path=imgUrl, width=800, height=600, op="fit") %}
+  {% set imgRenderUrl = imgRender.url %}
+{% endif %}
+
 <figure {% if class %}class="{{ class }}"{% endif %}>
-  {% if img %}
-    {% set document = page | default(value=section) %}
-    {% set img_medium = resize_image(path=document.colocated_path ~ img, width=800, height=600, op="fit") %}
-    <a href="{{config.base_url ~ document.colocated_path ~ img}}" class="hide-print-link">
-      <img src="{{ img_medium.url }}" alt="{{ description }}">
-    </a>
-  {% endif %}
-  {% if imgAbsolute %}
-    {% set img_medium = resize_image(path=imgAbsolute, width=800, height=600, op="fit") %}
-    <a href="{{imgAbsolute}}" class="hide-print-link">
-      <img src="{{ img_medium.url }}" alt="{{ description }}">
-    </a>
-  {% endif%}
+  <a href="{{config.base_url ~ imgUrl}}" class="hide-print-link">
+    <img src="{{ imgRenderUrl }}" alt="{{ imageAlt }}">
+  </a>
   <figcaption>
-    {% if not hidetext %}{{ description }}{% endif %}
+    {% if description %}{{ description }}{% endif %}
     {% if creditsLink %}<a class="hide-print-link" href="{{ creditsLink }}">{% endif %}
     {% if credits %}Kuva: {{ credits }}{% endif %}
     {% if creditsLink %}</a>{% endif %}
