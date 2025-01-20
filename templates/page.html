@@ -8,7 +8,7 @@
 <meta property="og:title" content="{{ config.author }} - {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}">
 <meta property="og:description" content="{{ page.description }}">
 {% if page.extra.image %}
-    <meta property="og:image" content="{{ current_url | safe }}/{{ page.extra.image }}">
+    <meta property="og:image" content="{{ current_url ~ page.extra.image | safe }}">
 {% endif %}
 {% endblock %}
 
