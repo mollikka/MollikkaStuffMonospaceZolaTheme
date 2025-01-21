@@ -3,9 +3,7 @@
 <ul>
   {% for link in menu %}
     <li>
-      <a
-        {% if link.theme %} class="{{ link.theme }}" {% else %} class="themeDefault" {% endif %}
-        href="{{ link.url }}">
+      <a href="{{ link.url }}">
         {{ link.name }}
       </a>
     </li>
