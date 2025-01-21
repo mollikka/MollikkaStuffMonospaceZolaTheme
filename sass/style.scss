@@ -3,6 +3,7 @@ $accent-back-gray: #505050;
 $accent-front-gray: #aaaaaa;
 
 $accent-back-green: #25533b;
+$accent-front-green: #8be3b4;
 
 $background-blue: #281e24;
 $accent-back-blue: #2163a1;
@@ -11,6 +12,8 @@ $accent-front-blue: #74c0ec;
 $background-red: #1e1e28;
 $accent-back-red: #940a4f;
 $accent-front-red: #f97bba;
+
+$background-light: #f9f9fb;
 
 body,
 .themeDefault {
@@ -36,6 +39,33 @@ body,
   --accent-color-front: #{$accent-front-red};
   --accent-color-back: #{$accent-back-red};
   --text-color: #ffffff; 
+}
+
+@media (prefers-color-scheme: light) {
+  .themeDefault {
+    --background-color: #{$background-light};
+    --accent-color-front: #{$accent-back-gray};
+    --accent-color-back: #{$accent-front-gray};
+    --text-color: #000000;
+  }
+  .themeGreen {
+    --background-color: #{$background-light};
+    --accent-color-front: #{$accent-back-green};
+    --accent-color-back: #{$accent-front-green};
+    --text-color: #000000;
+  }
+  .themeBlue {
+    --background-color: #{$background-light};
+    --accent-color-front: #{$accent-back-blue};
+    --accent-color-back: #{$accent-front-blue};
+    --text-color: #000000;
+  }
+  .themeRed {
+    --background-color: #{$background-light};
+    --accent-color-front: #{$accent-back-red};
+    --accent-color-back: #{$accent-front-red};
+    --text-color: #000000;
+  }
 }
 
 html {
