@@ -15,10 +15,10 @@ demo = ""
 [extra]
 
 themes = [
-    {name = "themeDefault", color_light="#25533b", color_dark="#232323", favicon="/favicon-themeGreen.ico"},
-    {name = "themeRed",     color_light="#940a4f", color_dark="#1e1e28", favicon="/favicon-themeRed.ico"},
-    {name = "themeGreen",   color_light="#25533b", color_dark="#232323", favicon="/favicon-themeGreen.ico"},
-    {name = "themeBlue",    color_light="#2163a1", color_dark="#281e24", favicon="/favicon-themeBlue.ico"},
+    {name = "themeDefault", color_light="#aaaaaa", color_dark="#505050", favicon="/favicon-themeGreen.ico"},
+    {name = "themeRed",     color_light="#e3646c", color_dark="#940a4f", favicon="/favicon-themeRed.ico"},
+    {name = "themeGreen",   color_light="#63d07e", color_dark="#25533b", favicon="/favicon-themeGreen.ico"},
+    {name = "themeBlue",    color_light="#74c0ec", color_dark="#2163a1", favicon="/favicon-themeBlue.ico"},
 ]
 
 # The theme author info: you!
