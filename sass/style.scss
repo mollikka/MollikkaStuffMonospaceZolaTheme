@@ -3,6 +3,12 @@ $dark-gray: #505050;
 $light-gray: #aaaaaa;
 $very-light-gray: #fafafa;
 
+@media (prefers-color-scheme: light) {
+  .math-formula {
+    filter: invert(100%);
+  }
+}
+
 body,
 .themeDefault {
   --background-color: #{$very-dark-gray};
