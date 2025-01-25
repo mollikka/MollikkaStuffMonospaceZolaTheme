@@ -8,7 +8,8 @@
 <meta property="og:title" content="{{ config.author }} - {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}">
 <meta property="og:description" content="{{ page.description }}">
 {% if page.extra.image %}
-    <meta property="og:image" content="{{ current_url ~ page.extra.image | safe }}">
+    {% set share_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=1200, height=630, op='fill', format='jpg') %}
+    <meta property="og:image" content="{{ share_preview.url | safe }}">
 {% endif %}
 {% endblock %}
 
