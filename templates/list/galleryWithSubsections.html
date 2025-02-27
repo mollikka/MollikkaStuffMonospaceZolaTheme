@@ -18,6 +18,8 @@
 
   {% set posts = subsection.pages | slice(end=2) %}
   {% include "include/posts/gallery.html" %}
+  {% if subsection.pages | length > 2 %}<a href="{{ subsection.permalink }}">More...</a>{% endif %}
+
 {% endfor %}
 
 {% endblock content %}
