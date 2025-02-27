@@ -1,0 +1,18 @@
+{% extends "taxonomy_single.html" %}
+
+{% block content %}
+<h1>{{ taxonomy.name | title }}: {{ term.name | title }}</h1>
+
+{% set posts = term.pages | sort(attribute="date") %}
+<ul class="gallery">
+    {% for page in posts %}
+      <li>
+        <a href="{{ page.permalink | safe }}">
+          {{loop.index}}: {{ page.title }}{% if page.year %} ({{page.year}}){% endif %} {% include "include/language.html" %}
+          {% set img_preview = resize_image(path=page.colocated_path ~ page.extra.image, width=400, height=400) %}
+          <img class="thumbnail" src="{{ img_preview.url }}">
+        </a>
+      </li>
+    {% endfor %} 
+    </ul>
+{% endblock content %}
