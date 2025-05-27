@@ -37,6 +37,10 @@ a.hide-print-link::after {
     filter: invert(100%);
 }
 
+.page-break {
+    break-after: page;
+}
+
 h1,
 h2,
 h3 {
