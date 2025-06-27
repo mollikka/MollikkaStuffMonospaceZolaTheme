@@ -2,3 +2,4 @@ public/
 .DS_STORE
 **/.DS_Store
 static/processed_images/
+static/musicplayer.js

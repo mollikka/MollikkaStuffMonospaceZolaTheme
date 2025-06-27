@@ -110,6 +110,21 @@ body {
   margin: auto;
 }
 
+.slider {
+  height: 1rem;
+  color: var(--text-color);
+  background-color: var(--accent-color-back);
+}
+
+.volumeBar {
+  margin-top: 1.4em;
+  margin-bottom: 1.4em;
+}
+
+.playingTrack {
+  background-color: var(--accent-color-back);
+}
+
 .linemenu {
   div {
     display: inline-block;

@@ -1,0 +1,13 @@
+{% extends "single/essay.html" %} {% block page %} {% if page.extra.playlist %}
+<script type="module" crossorigin src="/musicplayer.js"></script>
+<div id="root" data-playlist-url="playlist.json"></div>
+<noscript>
+    <img class="artwork" src="{{ page.extra.image }}">
+
+    <p>
+      JavaScript is disabled in your browser. Please enable JavaScript to use the
+      music player. Alternatively, <a href="playlist.json" download>download the playlist manually</a>.
+    </p>
+  </div>
+</noscript>
+{% endif %} {{ page.content | safe }} {% endblock %}
