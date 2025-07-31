@@ -4,29 +4,29 @@ $light-gray: #aaaaaa;
 $very-light-gray: #fafafa;
 
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('fonts/JetBrainsMono-Italic.woff2') format('woff2');
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('fonts/JetBrainsMono-BoldItalic.woff2') format('woff2');
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
 }
@@ -42,7 +42,7 @@ body,
   --background-color: #{$very-dark-gray};
   --accent-color-front: #{$light-gray};
   --accent-color-back: #{$dark-gray};
-  --text-color: #ffffff; 
+  --text-color: #ffffff;
   @media (prefers-color-scheme: light) {
     --background-color: #{$very-light-gray};
     --accent-color-front: #{$dark-gray};
@@ -55,7 +55,7 @@ body,
   --background-color: #{$very-dark-gray};
   --accent-color-front: #{$light-gray};
   --accent-color-back: #25533b;
-  --text-color: #ffffff; 
+  --text-color: #ffffff;
   @media (prefers-color-scheme: light) {
     --background-color: #{$very-light-gray};
     --accent-color-front: #1d672d;
@@ -68,7 +68,7 @@ body,
   --background-color: #{$very-dark-gray};
   --accent-color-front: #74c0ec;
   --accent-color-back: #2163a1;
-  --text-color: #ffffff; 
+  --text-color: #ffffff;
   @media (prefers-color-scheme: light) {
     --background-color: #{$very-light-gray};
     --accent-color-front: #1958cd;
@@ -100,7 +100,7 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
 
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   line-height: 1.4;
   font-size: 1rem;
   overflow-wrap: break-word;
@@ -146,7 +146,10 @@ h3 {
   }
 }
 
-p, h3, h4, h5 {
+p,
+h3,
+h4,
+h5 {
   margin-top: 1.4em;
   margin-bottom: 1.4em;
 }
@@ -227,12 +230,12 @@ figure {
   max-height: 100%;
   width: auto;
   height: auto;
-	/* IE, only works on <img> tags */
-	-ms-interpolation-mode: nearest-neighbor;
-	/* firefox */
-	image-rendering: crisp-edges;
-	/* other browsers and spec */
-	image-rendering: pixelated;
+  /* IE, only works on <img> tags */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* firefox */
+  image-rendering: crisp-edges;
+  /* other browsers and spec */
+  image-rendering: pixelated;
 }
 //
 
