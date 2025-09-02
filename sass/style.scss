@@ -54,7 +54,7 @@ body,
 .themeGreen {
   --background-color: #{$very-dark-gray};
   --accent-color-front: #{$light-gray};
-  --accent-color-back: #25533b;
+  --accent-color-back: #2a6848;
   --text-color: #ffffff;
   @media (prefers-color-scheme: light) {
     --background-color: #{$very-light-gray};
@@ -79,8 +79,8 @@ body,
 
 .themeRed {
   --background-color: #{$very-dark-gray};
-  --accent-color-front: #f97b85;
-  --accent-color-back: #940a0a;
+  --accent-color-front: #f76c77;
+  --accent-color-back: #9f1f1f;
   --text-color: #ffffff;
   @media (prefers-color-scheme: light) {
     --background-color: #{$very-light-gray};
