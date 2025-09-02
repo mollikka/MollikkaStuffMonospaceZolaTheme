@@ -347,3 +347,10 @@ td {
 th {
   padding: 0em 1ch 0em 1ch;
 }
+
+video {
+  margin: auto;
+  max-width: 100%;
+  object-fit: fill; 
+  display: block;
+}
