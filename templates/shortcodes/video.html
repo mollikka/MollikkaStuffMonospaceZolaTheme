@@ -1,6 +1,9 @@
-<video controls autoplay muted loop>
-  <source src="{{ src }}" type="video/webm">
-  Your browser does not support the video tag.
-</video> 
-
-{{ description | safe }}
+<figure {% if class %}class="{{ class }}"{% endif %}>
+  <video controls autoplay muted loop>
+    <source src="{{ src }}" type="video/webm">
+    Your browser does not support the video tag.
+  </video> 
+  <figcaption>
+    {% if description %}{{ description | safe }}{% endif %}
+  </figcaption>
+</figure>
