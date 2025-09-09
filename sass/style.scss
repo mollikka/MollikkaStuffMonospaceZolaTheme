@@ -303,7 +303,7 @@ ol {
 
 .comment {
   border-width: 0em 0ch 0em 1ch;
-  border-style: double;
+  border-style: solid;
   border-color: var(--accent-color-back);
   min-height: 4.2em;
   .comment-avatar {
@@ -329,7 +329,8 @@ p {
 }
 
 blockquote {
-  border-style: double;
+  border-color: var(--accent-color-front);
+  border-style: solid;
   border-width: 0em 0ch 0em 1ch;
   padding: 0em 1ch 0em 1ch;
   font-style: italic;
