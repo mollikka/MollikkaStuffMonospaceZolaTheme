@@ -3,6 +3,20 @@
 THEME_DIRECTORY=$(dirname $0)
 echo $THEME_DIRECTORY
 
+# Create buildinfo
+GIT_COMMIT=$(git rev-parse HEAD)
+BUILD_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+cat > content/buildinfo.md <<EOF
++++
+title = "Build Info"
+template = "buildinfo.html"
+[extra]
+commit = "$GIT_COMMIT"
+timestamp = "$BUILD_TIME"
++++
+EOF
+
 # Function to kill background processes when the script exits
 cleanup() {
   echo "Cleaning up..."

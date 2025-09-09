@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+
+{% block metadata %}
+<title>{{ section.title }}</title>
+<meta name="description" content="{{ section.description }}">
+{% endblock %}
+
+{% block content %} 
+<h1>{{ section.title }}</h1>
+
+<ul>
+    <li>Version: {{ page.extra.commit }}</li>
+    <li>Timestamp: {{ page.extra.timestamp }}</li>
+</ul>
+
+{% endblock %}
