@@ -117,8 +117,8 @@ body {
 }
 
 .volumeBar {
-  margin-top: 1.4em;
-  margin-bottom: 1.4em;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
 }
 
 .playingTrack {
@@ -197,7 +197,7 @@ img {
 
 figure {
   text-align: center;
-  margin: 1.4em 1ch 1.4em 1ch;
+  margin: 1.4rem 1ch 1.4rem 1ch;
 
   img {
     display: inline-block;
@@ -266,7 +266,7 @@ ul {
   }
   padding-inline-start: 0ch;
   list-style: none;
-  margin: 1.4em 0 1.4em 1ch;
+  margin: 1.4rem 0 1.4rem 1ch;
 }
 ol {
   padding-inline-start: 0ch;
@@ -274,8 +274,8 @@ ol {
 }
 
 .table-of-contents {
-  margin-top: 1.4em;
-  margin-bottom: 1.4em;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
 }
 
 .artwork {
@@ -290,8 +290,8 @@ ol {
     display: inline-block;
     width: 100%;
   }
-  @media screen and (min-width: 46em) {
-    margin: 1.4em 0 1.4em 1ch;
+  @media screen and (min-width: 46rem) {
+    margin: 1.4rem 0 1.4rem 1ch;
     li {
       width: 36ch;
     }
@@ -305,27 +305,27 @@ ol {
 .cv-portrait {
   width: 12ch;
   float: right;
-  padding: 0em 1ch 0em 1ch;
+  padding: 0rem 1ch 0rem 1ch;
 }
 
 .comment {
-  border-width: 0em 0ch 0em 1ch;
+  border-width: 0rem 0ch 0rem 1ch;
   border-style: solid;
   border-color: var(--accent-color-back);
-  min-height: 4.2em;
+  min-height: 4.2rem;
   .comment-avatar {
-    padding: 0em 0ch 0em 1ch;
+    padding: 0rem 0ch 0rem 1ch;
     float: left;
     width: 6ch;
-    height: 4.2em;
+    height: 4.2rem;
     object-fit: contain;
   }
   .comment-text {
     overflow: auto;
-    padding: 0em 0ch 0em 1ch;
+    padding: 0rem 0ch 0rem 1ch;
     margin: 0;
     p {
-      margin-top: 0em;
+      margin-top: 0rem;
     }
   }
 }
@@ -338,8 +338,8 @@ p {
 blockquote {
   border-color: var(--accent-color-front);
   border-style: solid;
-  border-width: 0em 0ch 0em 1ch;
-  padding: 0em 1ch 0em 1ch;
+  border-width: 0rem 0ch 0rem 1ch;
+  padding: 0rem 1ch 0rem 1ch;
   font-style: italic;
 }
 
@@ -355,10 +355,10 @@ table {
   border-spacing: 0;
 }
 td {
-  padding: 0em 1ch 0em 0ch;
+  padding: 0rem 1ch 0rem 0ch;
 }
 th {
-  padding: 0em 1ch 0em 1ch;
+  padding: 0rem 1ch 0rem 1ch;
 }
 
 video {
