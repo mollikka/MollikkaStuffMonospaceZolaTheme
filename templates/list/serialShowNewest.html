@@ -1,0 +1,26 @@
+{% extends "section.html" %}
+
+{% block content %}
+    {% set page = section.pages | first %}
+
+    <h1>{{ page.title }}{% if page.year %} ({{ page.year }}){% endif %}</h1>
+    <span class="date">
+    {% if page.date %}{{ page.date }}{% endif %}
+    {% if page.updated %}Updated: {{ page.updated }}{% endif %}
+    </span>
+    {% include "include/series.html" %}
+    {% include "include/tags.html" %}
+
+    {% include "include/language.html" %}
+    {% if page.extra.tableOfContents %}
+    <nav>{% include "tableOfContents/h1.html" %}</nav>
+    {% endif %}
+
+    {% include "include/divider.html" %}
+
+    {% include "include/serialMenu.html" %}
+
+    {{ page.content | safe }}
+
+    {% include "include/serialMenu.html" %}
+{% endblock %}
