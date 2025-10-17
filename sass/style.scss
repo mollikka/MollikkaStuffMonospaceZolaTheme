@@ -232,6 +232,10 @@ figure {
   box-shadow: 2px 2px 5px rgb(0 0 0 / 20%);
 }
 
+.external-link:after {
+  content: ' ↗';
+}
+
 .pixelart {
   max-width: 100%;
   max-height: 100%;
