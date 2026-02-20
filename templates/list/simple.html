@@ -5,9 +5,14 @@
 
 {{ section.content | safe }}
 
-{% for year, posts in section.pages | group_by(attribute="year") %}
-  <h2 id="year-{{ year }}">{{ year }}</h2>
-  {% include "include/posts/text.html" %}
-{% endfor %}
+<ul>
+  {% for page in section.pages %}
+    <li>
+      <a href="{{ page.permalink | safe }}">
+        {{ page.title }}{% if page.year %} ({{page.year}}){% endif %}  {% include "include/language.html" %}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
 
 {% endblock content %}
