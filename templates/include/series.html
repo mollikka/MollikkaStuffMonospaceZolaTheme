@@ -9,9 +9,7 @@
       {% set url = get_taxonomy_url(kind="series", name=term) %}
       Series: <a href="{{ url }}">{{ term }}</a> -
 
-      {% for seriespage in seriespages | sort(attribute="date") %}
-        {% if page.path == seriespage.path %}[{% endif %}<a href="{{ seriespage.path }}">{{ loop.index }}</a>{% if page.path == seriespage.path %}]{% endif %}
-      {% endfor %}
+      {% for seriespage in seriespages | sort(attribute="date") %}{% if page.path == seriespage.path %}[{% else %}&nbsp;{% endif %}<a href="{{ seriespage.path }}">{{ loop.index }}</a>{% if page.path == seriespage.path %}]{% else %}&nbsp;{% endif %}{% endfor %}
     {% endfor %}
   </nav>
 {% endif %}
