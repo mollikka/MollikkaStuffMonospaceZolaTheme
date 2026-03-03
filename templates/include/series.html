@@ -4,9 +4,9 @@
 {% if seriescount > 0 %}
   <nav>
     {% for term in series %}
-      {% set seriespages = (get_taxonomy_term(kind="series", term=term) | get(key="pages", default=[])) %}
+      {% set seriespages = (get_taxonomy_term(kind="series", term=term, lang=lang) | get(key="pages", default=[])) %}
       
-      {% set url = get_taxonomy_url(kind="series", name=term) %}
+      {% set url = get_taxonomy_url(kind="series", name=term, lang=lang) %}
       Series: <a href="{{ url }}">{{ term }}</a> -
 
       {% for seriespage in seriespages | sort(attribute="date") %}{% if page.path == seriespage.path %}[{% else %}&nbsp;{% endif %}<a href="{{ seriespage.path }}">{{ loop.index }}</a>{% if page.path == seriespage.path %}]{% else %}&nbsp;{% endif %}{% endfor %}

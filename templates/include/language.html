@@ -1,5 +1,0 @@
-{% set languages = page | get(key="taxonomies", default=[]) | get(key="Language", default=[]) | sort -%}
-
-{% for term in languages %}
-    <span class="language">{{term}}</span>
-{% endfor %}

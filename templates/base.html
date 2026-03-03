@@ -3,15 +3,20 @@
 {% if page %}
   {% set sectionName = page.ancestors | last %}
   {% set section = get_section(path=sectionName) %}
-  {% set language = page | get(key="taxonomies", default=[]) | get(key="Language", default=["en-US"]) | sort | first -%}
-{% else %}
-  {% set language = "en-US" %}
 {% endif %}
 
 {% if section and section.extra.theme %}
   {% set theme = config.extra.themes | filter(attribute="name", value=section.extra.theme) | first %}
 {% else %}
   {% set theme = config.extra.themes | filter(attribute="name", value="themeDefault") | first %}
+{% endif %}
+
+{% if page is defined %}
+  {% set translations = page.translations | sort(attribute="lang") %}
+{% elif section is defined %}
+  {% set translations = section.translations | sort(attribute="lang") %}
+{% else %}
+  {% set translations = [] %}
 {% endif %}
 
 <!DOCTYPE html>
@@ -28,7 +33,7 @@
 <!--    #############    -->
 
 <!-- Möllikkä Stuff 2005-12-04 -->
-<html lang="{{language}}">
+<html lang="{{config.extra.lang_locale[lang]}}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -51,12 +56,25 @@
           href="{{ link.url }}"
           >{{ link.name }}</a>&nbsp;/</div>{% endfor %}
       </nav>
+                                    
       <div aria-hidden="true" class="decorative-ascii">
         \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
       </div>
-      <div aria-hidden="true" class="decorative-ascii">
-        ////////////////////////////////////////////////////////////////////////////////
-      </div>
+
+      {% if translations | length > 1 %}    
+        <div class="decorative-ascii">
+        <span aria-hidden="true">//////</span>
+        {% for translation in translations %}
+          <a href="{{ translation.permalink }}">{{ config.extra.lang_names[translation.lang] }}</a> {% if not loop.last %}|{% endif %}
+        {% endfor %}
+        <span aria-hidden="true">////////////////////////////////////////////////////////////////////////////////</span>
+      </div> 
+      {% else %}
+        <div aria-hidden="true" class="decorative-ascii">
+          ////////////////////////////////////////////////////////////////////////////////
+        </div>
+      {% endif %}
+      
     </header>
     <section>{% block content %} {% endblock %}</section>
     <footer id="bottom">

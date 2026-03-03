@@ -4,7 +4,7 @@
 
 {% if section.extra.featured_tags %}
   <nav class="linemenu">
-    {% for tag in section.extra.featured_tags %}{% set url = get_taxonomy_url(kind="tags", name=tag) %}<div>
+    {% for tag in section.extra.featured_tags %}{% set url = get_taxonomy_url(kind="tags", name=tag, lang=lang) %}<div>
       \&nbsp;<a href="{{ url }}">#{{ tag }}</a>&nbsp;\
     </div>{% endfor %}
   </nav>
@@ -21,7 +21,7 @@
   <article>
     <a href="{{ page.permalink | safe }}">
     <h2>
-      {{ page.title }} ({{ page.date }})  {% include "include/language.html" %}
+      {{ page.title }} ({{ page.date }}) 
     </h2>
     </a>
     {% if page.extra.image %}
