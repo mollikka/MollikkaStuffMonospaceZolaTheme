@@ -6,7 +6,11 @@
 
 {% if img %}
   {% set document = page | default(value=section) %}
-  {% set imgUrl = document.colocated_path ~ img %}
+  {% set imgUrl = document.path ~ img %}
+  {# Ensure the leading slash is handled correctly #}
+  {% if imgUrl is starting_with("/") %}
+    {% set imgUrl = imgUrl | trim_start_matches(pat="/") %}
+  {% endif %}
 {% else %}
   {% set imgUrl = imgAbsolute %}
 {% endif %}
