@@ -6,13 +6,15 @@
 
 {% if img %}
   {% set document = page | default(value=section) %}
-  {% set imgUrl = document.path ~ img %}
+  {% set imgLinkUrl = document.path ~ img %}
+  {% set imgUrl = document.colocated_path ~ img %}
   {# Ensure the leading slash is handled correctly #}
-  {% if imgUrl is starting_with("/") %}
-    {% set imgUrl = imgUrl | trim_start_matches(pat="/") %}
+  {% if imgLinkUrl is starting_with("/") %}
+    {% set imgLinkUrl = imgLinkUrl | trim_start_matches(pat="/") %}
   {% endif %}
 {% else %}
   {% set imgUrl = imgAbsolute %}
+  {% set imgLinkUrl = imgAbsolute %}
 {% endif %}
 
 {% if useOriginalSize %}
@@ -23,7 +25,7 @@
 {% endif %}
 
 <figure {% if class %}class="{{ class }}"{% endif %}>
-  <a href="{{config.base_url ~ imgUrl}}" class="hide-print-link">
+  <a href="{{config.base_url ~ imgLinkUrl}}" class="hide-print-link">
     <img src="{{ imgRenderUrl }}" alt="{{ imageAlt }}">
   </a>
   <figcaption>
