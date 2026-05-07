@@ -1,5 +1,3 @@
-{% set menu = config.extra.menu_items -%}
-
 {% if page %}
   {% set sectionName = page.ancestors | last %}
   {% set section = get_section(path=sectionName) %}
@@ -51,10 +49,19 @@
     <header>
       <nav class="themeDefault linemenu">
         <div><a href="../">&lt;&lt;</a></div>
-        {% for link in menu %}<div>/&nbsp;<a
-          {% if link.theme %}class="{{ link.theme }}"{% else %}class="themeDefault"{% endif %}
-          href="{{ link.url }}"
-          >{{ link.name }}</a>&nbsp;/</div>{% endfor %}
+        {% if lang == config.default_language %}
+          {% set mainSection = get_section(path="_index.md") %}
+        {% else %}
+          {% set mainSection = get_section(path="_index." ~ lang ~ ".md") %}
+        {% endif %}
+
+        <div>/&nbsp;<a href="{{ mainSection.permalink }}" {% if s.extra.theme %}class="{{ s.extra.theme }}"{% else %}class="themeDefault"{% endif %}>{{ mainSection.extra.menutitle }}</a>&nbsp;/</div>
+        {%- for subs in mainSection.subsections -%}
+          {%- set s = get_section(path=subs) -%}
+          {%- if s.extra.menutitle -%}
+            <div>/&nbsp;<a href="{{ s.permalink }}" {% if s.extra.theme %}class="{{ s.extra.theme }}"{% else %}class="themeDefault"{% endif %}>{{ s.extra.menutitle }}</a>&nbsp;/</div>
+          {%- endif -%}
+        {%- endfor -%}
       </nav>
                                     
       <div aria-hidden="true" class="decorative-ascii">
