@@ -110,6 +110,33 @@ body {
   margin: auto;
 }
 
+.box {
+  position: relative;
+  overflow: hidden;
+  padding: 1.4em 0 0 2ch;
+}
+
+// decoration above the box
+.box::before {
+  color: var(--accent-color-front);
+  content: "================================================================================================================================";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+}
+
+// decoration to the left of the box
+.box::after {
+  color: var(--accent-color-front);
+  content: "|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a";
+  position: absolute;
+  left: 0;
+  top: 1.4em;
+  white-space: pre;
+}
+
 .slider {
   height: 1rem;
   color: var(--text-color);
@@ -313,9 +340,6 @@ ol {
 }
 
 .comment {
-  border-width: 0rem 0ch 0rem 1ch;
-  border-style: solid;
-  border-color: var(--accent-color-back);
   min-height: 4.2rem;
   .comment-avatar {
     padding: 0rem 0ch 0rem 1ch;
