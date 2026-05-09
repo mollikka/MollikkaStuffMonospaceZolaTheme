@@ -114,6 +114,10 @@ body {
   position: relative;
   overflow: hidden;
   padding: 1.4em 0 0 2ch;
+
+  p {
+    margin: 0;
+  }
 }
 
 // decoration above the box
@@ -135,6 +139,13 @@ body {
   left: 0;
   top: 1.4em;
   white-space: pre;
+}
+
+.boximage {
+  display: block;
+  width: 12ch;
+  height: 1.4*5rem;
+  object-fit: cover;
 }
 
 .slider {
