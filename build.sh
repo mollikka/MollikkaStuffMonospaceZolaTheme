@@ -27,11 +27,6 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Build music player
-npm install --prefix $THEME_DIRECTORY/MusicPlayer
-npm run build --prefix $THEME_DIRECTORY/MusicPlayer
-cp $THEME_DIRECTORY/MusicPlayer/dist/assets/index.js $THEME_DIRECTORY/static/musicplayer.js
-
 # Start services as background processes
 python3 $THEME_DIRECTORY/renderserver/main.py &
 
