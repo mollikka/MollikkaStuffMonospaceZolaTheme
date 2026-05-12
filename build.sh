@@ -5,6 +5,7 @@ echo $THEME_DIRECTORY
 
 # Create buildinfo
 GIT_COMMIT=$(git rev-parse HEAD)
+GIT_COMMIT_THEME=$(git -C $THEME_DIRECTORY rev-parse HEAD)
 BUILD_TIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 cat > content/buildinfo.md <<EOF
@@ -12,7 +13,8 @@ cat > content/buildinfo.md <<EOF
 title = "Build Info"
 template = "buildinfo.html"
 [extra]
-commit = "$GIT_COMMIT"
+site_commit = "$GIT_COMMIT"
+theme_commit = "$GIT_COMMIT_THEME"
 timestamp = "$BUILD_TIME"
 +++
 EOF
