@@ -2,6 +2,17 @@
 {% set first = section.pages | first %}
 
 <nav class="linemenu">
+  {% set seriespages = section.pages %}
+  {%- for seriespage in seriespages | sort(attribute="date") -%}
+    <div>
+      {%- if page.path == seriespage.path -%}[{%- else -%}&nbsp;{%- endif -%}
+      <a href="{{ seriespage.path }}">{{ loop.index }}</a>
+      {%- if page.path == seriespage.path -%}]{%- else -%}&nbsp;{%- endif -%}
+    </div>
+  {%- endfor -%}
+</nav>
+
+<nav class="linemenu">
   {% if page.higher %}
     <div>
       <a href="{{ last.permalink }}">&lt;&lt;</a>
