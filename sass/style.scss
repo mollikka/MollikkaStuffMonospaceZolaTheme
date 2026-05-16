@@ -53,7 +53,7 @@ body,
 
 .themeGreen {
   --background-color: #{$very-dark-gray};
-  --accent-color-front: #{$light-gray};
+  --accent-color-front: #51df95;
   --accent-color-back: #2a6848;
   --text-color: #ffffff;
   @media (prefers-color-scheme: light) {
@@ -122,7 +122,7 @@ body {
 
 // decoration above the box
 .box::before {
-  color: var(--accent-color-front);
+  color: var(--accent-color-back);
   content: "================================================================================================================================";
   position: absolute;
   top: 0;
@@ -133,7 +133,7 @@ body {
 
 // decoration to the left of the box
 .box::after {
-  color: var(--accent-color-front);
+  color: var(--accent-color-back);
   content: "|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a|\a";
   position: absolute;
   left: 0;

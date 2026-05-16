@@ -53,7 +53,7 @@
           {% set mainSection = get_section(path="_index." ~ lang ~ ".md") %}
         {% endif %}
 
-        <div>/&nbsp;<a href="{{ mainSection.permalink }}" {% if s.extra.theme %}class="{{ s.extra.theme }}"{% else %}class="themeDefault"{% endif %}>{{ mainSection.extra.menutitle }}</a>&nbsp;/</div>
+        <div>/&nbsp;<a href="{{ mainSection.permalink }}" {% if mainSection.extra.theme %}class="{{ mainSection.extra.theme }}"{% else %}class="themeDefault"{% endif %}>{{ mainSection.extra.menutitle }}</a>&nbsp;/</div>
         {%- for subs in mainSection.subsections -%}
           {%- set s = get_section(path=subs) -%}
           {%- if s.extra.menutitle -%}
