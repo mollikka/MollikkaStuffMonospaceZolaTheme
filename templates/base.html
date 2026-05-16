@@ -12,6 +12,7 @@
 {% if page is defined %}
   {% set translations = page.translations | sort(attribute="lang") %}
 {% elif section is defined %}
+  {% set page = section.pages | first %}
   {% set translations = section.translations | sort(attribute="lang") %}
 {% else %}
   {% set translations = [] %}
@@ -39,6 +40,8 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/print.css" media="print">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ theme | get(key='favicon') | safe }}">
+    {% if page.higher %}<link rel="prev" href="{{ page.higher.permalink }}">{% endif %}
+    {% if page.lower %}<link rel="next" href="{{ page.lower.permalink }}">{% endif %}
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ theme | get(key='color_light') | safe }}">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ theme | get(key='color_dark') | safe }}">
   </head>
@@ -81,5 +84,8 @@
       <div aria-hidden="true" class="divider-slash"></div>
       <div aria-hidden="true" class="divider-backslash"></div>
     </footer>
+    {% if page.higher or page.lower %}
+      <script src="/navigation.js"></script>
+    {% endif %}
   </body>
 </html>
