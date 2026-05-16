@@ -62,32 +62,24 @@
         {%- endfor -%}
       </nav>
                                     
-      <div aria-hidden="true" class="decorative-ascii">
-        \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-      </div>
+      <div aria-hidden="true" class="divider-backslash"></div>
 
-      {% if translations | length > 1 %}    
-        <div class="decorative-ascii">
-        {% for translation in translations %}
-          <a href="{{ translation.permalink }}">{{ config.extra.lang_names[translation.lang] }}</a> {% if not loop.last %}|{% endif %}
-        {% endfor %}
-        <span aria-hidden="true">////////////////////////////////////////////////////////////////////////////////</span>
-      </div> 
-      {% else %}
-        <div aria-hidden="true" class="decorative-ascii">
-          ////////////////////////////////////////////////////////////////////////////////
-        </div>
-      {% endif %}
+      <div class="divider-slash">
+        {%- if translations | length > 1 -%}
+          {%- for translation in translations -%}
+            <a href="{{ translation.permalink }}">
+              {{ config.extra.lang_names[translation.lang] }}
+            </a>
+            {% if loop.last %}&nbsp;{% else %}&nbsp;|&nbsp;{% endif %}
+          {% endfor %}
+        {%- endif -%}
+      </div>
       
     </header>
     <section>{% block content %} {% endblock %}</section>
     <footer id="bottom">
-      <div aria-hidden="true" class="decorative-ascii">
-        ////////////////////////////////////////////////////////////////////////////////
-      </div>
-      <div aria-hidden="true" class="decorative-ascii">
-        \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-      </div>
+      <div aria-hidden="true" class="divider-slash"></div>
+      <div aria-hidden="true" class="divider-backslash"></div>
     </footer>
   </body>
 </html>

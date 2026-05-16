@@ -169,10 +169,27 @@ body {
   }
 }
 
-.decorative-ascii {
-  color: var(--accent-color-back);
-  overflow: hidden;
+.divider-slash,
+.divider-backslash,
+.divider-straight{
+  display: flex;
   white-space: nowrap;
+  overflow: hidden;
+}
+
+.divider-slash::after {
+  content: "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////";
+  color: var(--accent-color-back);
+}
+
+.divider-backslash::after {
+  content: "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\";
+  color: var(--accent-color-back);
+}
+
+.divider-straight:after {
+  content: "--------------------------------------------------------------------------------";
+  color: var(--accent-color-back);
 }
 
 h1,
@@ -318,6 +335,14 @@ ol {
 .table-of-contents {
   margin-top: 1.4rem;
   margin-bottom: 1.4rem;
+}
+
+.table-of-contents::before {
+  content: "=====--------------------=====";
+}
+
+.table-of-contents::after {
+  content: "=====--------------------=====";
 }
 
 .artwork {
