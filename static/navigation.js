@@ -40,7 +40,7 @@
     if (Math.abs(dx) < horizontalRatioThreshold*Math.abs(dy)) return;
     if (Math.abs(dx) < velocityThreshold * dt) return;
 
-    if (dx < 0) goPrev();
+    if (dx > 0) goPrev();
     else goNext();
   }, { passive: true });
 })();
