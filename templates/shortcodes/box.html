@@ -1,5 +1,5 @@
 <div class="box {% if theme %}{{ theme }}{% endif %}">
-  {% if linkUrl %}<a href="{{linkUrl}}"/>{% endif %}
+  {% if linkUrl %}<a href="{{linkUrl}}">{% endif %}
   {{- body | markdown | safe -}}
   {% if imgUrl %}<img class="boximage" src="{{imgUrl}}"/>{% endif %}
   {% if linkUrl%}</a>{% endif %}
