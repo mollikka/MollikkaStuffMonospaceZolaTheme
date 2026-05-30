@@ -1,6 +1,13 @@
 <div class="box {% if theme %}{{ theme }}{% endif %}">
-  {% if linkUrl %}<a href="{{linkUrl}}">{% endif %}
-  {{- body | markdown | safe -}}
-  {% if imgUrl %}<img class="boximage" src="{{imgUrl}}"/>{% endif %}
+  {% if title %}
+    {% if linkUrl %}<a href="{{linkUrl | safe}}">{% endif %}
+    <h3 class="title">{{ title }}</h3>
+    {% if linkUrl%}</a>{% endif %}
+  {% endif%}
+
+  {% if linkUrl %}<a href="{{linkUrl | safe}}">{% endif %}
+    {% if imgUrl %}<img class="boximage" src="{{imgUrl}}"/>{% endif %}
   {% if linkUrl%}</a>{% endif %}
+
+  {{- body | markdown | safe -}}
 </div>
