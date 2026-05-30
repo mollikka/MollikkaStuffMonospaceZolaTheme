@@ -317,6 +317,12 @@ figure {
 a {
   text-decoration: none;
   color: var(--accent-color-front);
+  text-shadow:
+    0 0 1px var(--accent-color-front),
+    0 0 4px var(--accent-color-back);
+}
+a.themeDefault {
+  text-shadow: none;
 }
 
 ul {
