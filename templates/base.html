@@ -1,22 +1,22 @@
-{% if page %}
+{%- if page -%}
   {% set sectionName = page.ancestors | last %}
   {% set section = get_section(path=sectionName) %}
-{% endif %}
+{%- endif -%}
 
-{% if section and section.extra.theme %}
+{%- if section and section.extra.theme -%}
   {% set theme = config.extra.themes | filter(attribute="name", value=section.extra.theme) | first %}
-{% else %}
+{%- else -%}
   {% set theme = config.extra.themes | filter(attribute="name", value="themeDefault") | first %}
-{% endif %}
+{%- endif -%}
 
-{% if page is defined %}
+{%- if page is defined -%}
   {% set translations = page.translations | sort(attribute="lang") %}
-{% elif section is defined %}
+{%- elif section is defined -%}
   {% set page = section.pages | first %}
   {% set translations = section.translations | sort(attribute="lang") %}
-{% else %}
+{%- else -%}
   {% set translations = [] %}
-{% endif %}
+{%- endif -%}
 
 <!DOCTYPE html>
 <!--    #############    -->

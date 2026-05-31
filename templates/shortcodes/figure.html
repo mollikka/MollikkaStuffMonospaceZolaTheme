@@ -25,9 +25,13 @@
 {% endif %}
 
 <figure {% if class %}class="{{ class }}"{% endif %}>
+  {% if not useOriginalSize %}
   <a href="{{config.base_url ~ imgLinkUrl}}" class="hide-print-link">
+  {% endif %}
     <img src="{{ imgRenderUrl }}" alt="{{ imageAlt }}">
+  {% if not useOriginalSize %}
   </a>
+  {% endif %}
   <figcaption>
     {% if description %}{{ description | safe }}{% endif %}
     {% if creditsLink %}<a class="hide-print-link" href="{{ creditsLink }}">{% endif %}
