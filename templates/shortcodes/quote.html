@@ -1,5 +1,7 @@
 <blockquote>
     {{ body }}
 
-    {% if author %}<br>--&nbsp;{{ author }}{% endif %}
+    {% if author or source %}<br>{% endif %}
+    {% if author %}--&nbsp;{{ author }}{% endif %}{% if author and source %}, {% endif %}
+    {% if source %}&nbsp;{{source}}{% endif %}
 </blockquote>
