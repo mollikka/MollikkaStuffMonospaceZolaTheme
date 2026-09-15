@@ -6,8 +6,6 @@
   {% endif%}
 
   {% if linkUrl %}<a href="{{linkUrl | safe}}">{% endif %}
-    {% if imgUrl %}<img class="boximage" src="{{imgUrl}}"/>{% endif %}
+    {{- body | markdown | safe -}}
   {% if linkUrl%}</a>{% endif %}
-
-  {{- body | markdown | safe -}}
 </div>
