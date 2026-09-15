@@ -23,6 +23,10 @@ themes = [
     {name = "themeBlue",    color_light="#74c0ec", color_dark="#2163a1", favicon="/favicon-themeBlue.ico"},
 ]
 
+[extra.picture_credit]
+fi = "Kuva"
+en = "Photo"
+
 # The theme author info: you!
 [author]
 name = "Lauri Tervonen"
