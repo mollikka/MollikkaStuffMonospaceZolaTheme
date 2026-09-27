@@ -1,3 +1,4 @@
+{% component quote(author="", source="") -%}
 <blockquote>
     {{ body }}
 
@@ -5,3 +6,4 @@
     {% if author %}--&nbsp;{{ author }}{% endif %}{% if author and source %}, {% endif %}
     {% if source %}&nbsp;{{source}}{% endif %}
 </blockquote>
+{% endcomponent quote -%}

@@ -1,0 +1,12 @@
+{% component photoalbum(@page) -%}
+{% for asset in page.assets -%}
+  {% if asset is matching(pat="[.](jpg|png)$") -%}
+    {% set image = resize_image(path=asset, width=600, height=600, op="fit") -%}
+    <figure>
+      <a href="{{ get_url(path=asset) }}"  target="_blank">
+        <img src="{{ image.url }}">
+      </a>
+    </figure>
+  {% endif -%}
+{% endfor -%}
+{% endcomponent photoalbum -%}

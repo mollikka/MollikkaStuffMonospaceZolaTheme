@@ -1,6 +1,8 @@
+{% component comment(@config, @page, date) -%}
 <aside class="comment box">
   <img class="comment-avatar" src="{{ config.extra.portraits[page.extra.portrait] }}">
     <div class="comment-text"><div class="date">{{ date }}</div>
-        {{ body | markdown | safe }}
+      {{ body | markdown | safe }}
     </div>
 </aside>
+{% endcomponent comment -%}

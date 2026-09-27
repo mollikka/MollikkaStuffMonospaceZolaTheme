@@ -1,3 +1,4 @@
+{% component video(src, class="", description="") -%}
 <figure {% if class %}class="{{ class }}"{% endif %}>
   <video controls autoplay muted loop>
     <source src="{{ src }}" type="video/webm">
@@ -7,3 +8,4 @@
     {% if description %}{{ description | safe }}{% endif %}
   </figcaption>
 </figure>
+{% endcomponent video -%}

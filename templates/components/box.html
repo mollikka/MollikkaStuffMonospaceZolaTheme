@@ -1,3 +1,4 @@
+{% component box(theme="", title="", linkUrl="") -%}
 <div class="box {% if theme %}{{ theme }}{% endif %}">
   {% if title %}
     {% if linkUrl %}<a href="{{linkUrl | safe}}">{% endif %}
@@ -9,3 +10,4 @@
     {{- body | markdown | safe -}}
   {% if linkUrl%}</a>{% endif %}
 </div>
+{% endcomponent box -%}

@@ -1,5 +1,7 @@
+{% component landmark(latitude, longitude, link, title, description) -%}
 <aside class="landmark">
   <a class="map-pin emoji hide-print-link" href="https://maps.google.com/?q={{ latitude }},{{ longitude }}">📍</a>
   <a href="{{ link }}">{{ title }}</a>
   <p>{{ description }}</p>
 </aside>
+{% endcomponent landmark -%}
