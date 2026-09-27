@@ -4,7 +4,7 @@
 
 {% if section.extra.featured_tags %}
   <nav class="linemenu">
-    {% for tag in section.extra.featured_tags %}{% set url = get_taxonomy_url(kind="tags", name=tag, lang=lang) %}<div>
+    {% for tag in section.extra.featured_tags %}{% set url = get_taxonomy_url(kind="tags", term=tag, lang=lang) %}<div>
       \&nbsp;<a href="{{ url }}">#{{ tag }}</a>&nbsp;\
     </div>{% endfor %}
   </nav>

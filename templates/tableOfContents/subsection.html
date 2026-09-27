@@ -1,7 +1,7 @@
 <div class="table-of-contents">
   <ul>
     {% for ss in section.subsections %}
-      {% set subsection = get_section(path=ss) %}
+      {% set subsection = get_section(path=ss, lang=lang) %}
       <li>
         <a href="#subsection-{{ subsection.components | last | safe }}">
           {{ subsection.components | last | capitalize | safe }}

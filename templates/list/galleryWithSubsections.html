@@ -9,7 +9,7 @@
 
 {{ section.content | safe }}
 
-{% for ss in section.subsections %} {% set subsection = get_section(path=ss) %}
+{% for ss in section.subsections %} {% set subsection = get_section(path=ss, lang=lang) %}
   <h2 id="subsection-{{ subsection.components | last | safe }}">
     <a href="{{ subsection.permalink }}">
       {{ subsection.components | last | capitalize | safe }}
@@ -17,7 +17,7 @@
   </h2>
 
   {% set max_subsections = section.extra.max_subsections | default(value=2) %}
-  {% set posts = subsection.pages | slice(end=max_subsections) %}
+  {% set posts = subsection.pages[:max_subsections] %}
   {% include "include/posts/gallery.html" %}
   {% if subsection.pages | length > max_subsections %}<a href="{{ subsection.permalink }}">More...</a>{% endif %}
 
