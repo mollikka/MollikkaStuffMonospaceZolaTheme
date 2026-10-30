@@ -33,6 +33,7 @@
   {% if not useOriginalSize -%}
   </a>
   {% endif -%}
+  {% if description or credits or license %}
   <figcaption>
     {% if description %}{{ description | safe }}{% endif %}
     {% if creditsLink %}<a class="hide-print-link" href="{{ creditsLink }}">{% endif %}
@@ -42,5 +43,6 @@
     {% if license %}{{ license }}{% endif %}
     {% if licenseLink %}</a>{% endif %}
   </figcaption>
+  {% endif %}
 </figure>
 {% endcomponent figure -%}
