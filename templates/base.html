@@ -52,13 +52,6 @@
     <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">
     {%- endfor -%}
 
-    {% if section %}
-    <link rel="canonical" href="{{ section.permalink }}">
-    {% elif page %}
-    <link rel="canonical" href="{{ page.permalink }}">
-    {% endif %}
-
-
   </head>
 
   <body class="{{ theme | get(key='name') | safe }}">
