@@ -52,6 +52,10 @@
     <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">
     {%- endfor -%}
 
+    {% if current_url %}
+    <link rel="canonical" href="{{ current_url }}">
+    {% endif %}
+
   </head>
 
   <body class="{{ theme | get(key='name') | safe }}">
