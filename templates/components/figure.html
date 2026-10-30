@@ -20,6 +20,7 @@
 
 {% if useOriginalSize -%}
   {% set imgRenderUrl = config.base_url ~ imgUrl -%}
+  {% set originalMetadata = get_image_metadata(path=imgUrl) %}
 {% else -%}
   {% set imgRender = resize_image(path=imgUrl, width=800, height=600, op="fit") -%}
   {% set imgRenderUrl = imgRender.url -%}
@@ -29,7 +30,15 @@
   {% if not useOriginalSize -%}
   <a href="{{config.base_url ~ imgLinkUrl}}" class="hide-print-link">
   {% endif -%}
-  <img src="{{ imgRenderUrl }}" alt="{{ imageAlt }}">
+  <img src="{{ imgRenderUrl }}" alt="{{ imageAlt }}" {% if useOriginalSize %}
+      width={{ originalMetadata.width}}
+      height={{ originalMetadata.height}}
+    {% elif imgRender %}
+      width={{ imgRender.width}}
+      height={{ imgRender.height}}
+      loading="lazy"
+      decoding="async"
+    {% endif %}>
   {% if not useOriginalSize -%}
   </a>
   {% endif -%}
