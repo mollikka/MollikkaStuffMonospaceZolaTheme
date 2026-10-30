@@ -44,6 +44,21 @@
     {% if page?.lower %}<link rel="next" href="{{ page.lower.permalink }}">{% endif %}
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ theme | get(key='color_light') | safe }}">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ theme | get(key='color_dark') | safe }}">
+
+    {%- for translation in translations -%}
+      {% if translation.lang == config.default_language or translations|length == 1 %}
+    <link rel="alternate" hreflang="x-default" href="{{ translation.permalink }}">
+      {% endif %}
+    <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink }}">
+    {%- endfor -%}
+
+    {% if section %}
+    <link rel="canonical" href="{{ section.permalink }}">
+    {% elif page %}
+    <link rel="canonical" href="{{ page.permalink }}">
+    {% endif %}
+
+
   </head>
 
   <body class="{{ theme | get(key='name') | safe }}">
