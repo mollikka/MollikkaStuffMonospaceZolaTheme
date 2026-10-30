@@ -2,8 +2,9 @@
 <blockquote>
     {{ body }}
 
-    {% if author or source %}<br>{% endif %}
-    {% if author %}--&nbsp;{{ author }}{% endif %}{% if author and source %}, {% endif %}
-    {% if source %}&nbsp;{{source}}{% endif %}
+    {% if author or source %}
+    {% endif %}
+    {% if author %}-- {{ author }}{% endif %}{% if author and source %}, {% endif %}
+    {% if source %} {{source}}{% endif %}
 </blockquote>
 {% endcomponent quote -%}
