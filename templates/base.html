@@ -37,8 +37,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block metadata %} {% endblock %}
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/print.css" media="print">
+    <link rel="stylesheet" href="/style.css" integrity="{{get_hash(path="/style.css")}}">
+    <link rel="stylesheet" href="/print.css" integrity="{{get_hash(path="/print.css")}}" media="print">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ theme | get(key='favicon') | safe }}">
     {% if page?.higher %}<link rel="prev" href="{{ page.higher.permalink }}">{% endif %}
     {% if page?.lower %}<link rel="next" href="{{ page.lower.permalink }}">{% endif %}
